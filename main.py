@@ -14,7 +14,7 @@ class Pairpossible(Stringclass):
         self.perm=permutations(list(self.string))
         li=[]
         for i in self.perm:
-            self.li.append(i)
+            li.append(i)
             print(list(i), end=" ")
     def show(self):
         return self.li
@@ -29,8 +29,7 @@ class SearchCommonElements(Stringclass):
             if d[j]>=2:
                 ans.append(j)
         return ans
-class EqualSumPairs:
-    def totalcount(self):
+
 
 
 
