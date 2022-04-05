@@ -20,7 +20,7 @@ for i in dict2:
 print(dict1)
 print()
 
-#Rename key city to location in the following dictionary
+#Rename key city to location in the following dictionary.
 print("Rename key city to location in the following dictionary: ")
 sampleDict = {
 
