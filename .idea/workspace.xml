@@ -32,7 +32,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.Ques2b">
+  <component name="RunManager" selected="Python.diamond">
     <configuration name="Diamondpattern" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python-Track" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,8 +119,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Ques2b" />
         <item itemvalue="Python.diamond" />
+        <item itemvalue="Python.Ques2b" />
         <item itemvalue="Python.Diamondpattern" />
       </list>
     </recent_temporary>

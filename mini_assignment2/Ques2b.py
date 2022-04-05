@@ -9,7 +9,7 @@ for i in range(rows):
 print("* "*(rows+1))
 
 print()
-
+#ques 2b
 for i in range (rows):
     for j in range (rows):
         if i==0 or j==(rows-1) or i==j:
