@@ -7,29 +7,50 @@ class Stringclass:
         return len(self.string)
     def converttolist(self):
         return list(self.string)
-1
+
 class Pairpossible(Stringclass):
 
     def pair(self):
         self.perm=permutations(list(self.string))
         li=[]
         for i in self.perm:
-            li.append(i)
-            print(list(i), end=" ")
-    def show(self):
-        return self.li
-
-
-
-class SearchCommonElements(Stringclass):
+            li.append(list(i))
+        return li
+    def common(self):
+        pairinput=input()
+        oplist=[]
+        d=dict(Counter(pairinput))
+        for j in set(self.string):
+            if j in d:
+                oplist.append(j)
+        return oplist
+class SearchCommonElements(Pairpossible):
     def commonele(self):
-        d=dict(Counter(list(self.string)))
-        ans=[]
-        for j in d:
-            if d[j]>=2:
-                ans.append(j)
-        return ans
+        var=super().common()
+        return var
 
+class EqualSumPairs(SearchCommonElements):
+    def call(self):
+        cnt=super().pair()
+        ansd=dict()
+
+        for i in cnt:
+            add=0
+            for k in i:
+                add+=int(k)
+            if add not in ansd:
+                ansd[add]=0
+
+            else:
+                del ansd[add]
+        lis=[]
+        for i in cnt:
+            add=0
+            for k in i:
+                add+=int(k)
+            if add in ansd:
+                lis.append(i)
+        return lis
 
 
 
@@ -42,10 +63,13 @@ print("Length of string is: ",objstringclass.printlength())
 print("String converted to list: ",objstringclass.converttolist())
 objpairpossible=Pairpossible(userinput)
 print("All possible pairs are: ")
-objpairpossible.pair()
+print(objpairpossible.pair())
 objsearchcommonelements=SearchCommonElements(userinput)
 print()
-print("Common elements are: ",objsearchcommonelements.commonele())
+print("common elements are: ",objsearchcommonelements.commonele())
+objEq=EqualSumPairs(userinput)
+print(objEq.call())
+
 
 
 
