@@ -10,7 +10,7 @@ print()
 
 # pascal triangle
 
-def printPascal(n: int):
+def printPascal(n):
     arr = [[0 for x in range(n)]
            for y in range(n)]
 
