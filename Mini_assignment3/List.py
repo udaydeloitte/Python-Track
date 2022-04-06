@@ -10,7 +10,6 @@ for i in arr:
     print()
 print()
 
-#Merge two lists as shown below.
 print("Merge two lists: ")
 merge=[]
 list1=["Hello", "take"]
