@@ -10,7 +10,7 @@ print()
 # Take the first two values, run the function on them. Then take the result and the next value and
 # have a multiplication between them. etc. When no more values are left, return the last result.
 print("Implementing reduce function: ")
-lst1 = [-10, 5, -6, 7, 50, -90, -1]
+lst1 = list(map(int,input("enter values ").split()))
 output_reduce = functools.reduce(lambda x, y: x * y, lst1)
 print(output_reduce)
 print()
