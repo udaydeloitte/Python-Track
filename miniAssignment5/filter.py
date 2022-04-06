@@ -3,7 +3,7 @@
 # input =[-1000, 500, -600, 700, 5000, -90000, -17500]
 import functools
 
-output_filter = list(filter(lambda n: n > 0, list(map(int, input("Enter list of numbers: ").split()))))
+output_filter = list(map(abs,list(filter(lambda n: n if (n < 0) else None, list(map(int, input("Enter list of numbers: ").split()))))))
 print(output_filter)
 print()
 
