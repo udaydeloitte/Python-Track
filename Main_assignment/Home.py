@@ -1,5 +1,7 @@
 from Main_assignment.Admin import adminLogin
+from Main_assignment.UserRegistration import register
 
+obj_register=register()
 print("******Welcome To BookMyShow******* ")
 obj_Admin=adminLogin()
 while True:
@@ -30,6 +32,9 @@ while True:
                         obj_Admin.deleteMovie()
             else:
                 print("Invalid Credentials")
+        elif user_input=="2":
+            obj_register.userregister()
+            obj_register.login()
         else:
             print("Wrong Input ")
             continue
