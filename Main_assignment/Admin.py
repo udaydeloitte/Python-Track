@@ -19,7 +19,11 @@ class adminLogin:
         wb=load_workbook("MovieData.xlsx")
         ws=wb.active
         rows=len(list(ws.rows))
-        number =int(input("How many movies you want to add: "))
+        try:
+            number =int(input("How many movies you want to add: "))
+        except ValueError as e:
+            print("Invalid input ",e)
+            return False
         for i in range(rows,number+rows):
              Title=input("Enter Title: ")
              Genre=input("Enter Genre: ")
@@ -29,6 +33,7 @@ class adminLogin:
              AdminRatings=input("Enter Admin Ratings out of 10: ")
              ws.append([Title, Genre, Length, Cast, Capacity, AdminRatings])
         wb.save("MovieData.xlsx")
+        return True
 
     def EditMovie(self):
         print("*** Welcome Admin ***")
