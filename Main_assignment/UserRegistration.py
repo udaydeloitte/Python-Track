@@ -48,11 +48,38 @@ class register:
             return False
 
     def movies(self):
+        id=0
         print("*** Movies List ***")
-        wb = load_workbook("tim.xlsx")
+        wb = load_workbook("MovieData.xlsx")
         ws = wb.active
         rows = len(list(ws.rows))
         range = ws["A1":"A" + str(rows)]
         for movie in range:
             for x in movie:
-                print(x.value)
+                id+=1
+                print(id, " ", x.value)
+    def movieInfo(self,choice):
+        wb=load_workbook("MovieData.xlsx")
+        ws=wb.active
+        range = ws[str(choice)]
+        print("*** Movie Information ***")
+        print("||Title||    ||Genre||    ||length||     ||Cast||      ||Capacity||     ||AdminRatings||")
+        for movies in range:
+            print(movies.value,end="     ")
+        wb.save("MovieData.xlsx")
+        print()
+    def cancelTickets(self,choice):         #ws["D"+str(row_number)]=Cast
+        wb = load_workbook("MovieData.xlsx")
+        ws = wb.active
+        cancel=int(input("Number of seats you want to cancel: "))
+        ws["E"+str(choice)]=ws["E"+str(choice)].value-cancel
+        wb.save("MovieData.xlsx")
+    def Userratings(self,choice):
+        wb = load_workbook("MovieData.xlsx")
+        ws = wb.active
+        user_rating=input("Enter ratings: ")
+        ws["G" + str(choice)] = user_rating
+        wb.save("MovieData.xlsx")
+
+
+

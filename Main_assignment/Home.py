@@ -37,13 +37,32 @@ while True:
     elif user_input == "2":
         if obj_register.userregister():
             print()
-            pass
+
         else:
             continue
     elif user_input == "3":
         if obj_register.userlogin():
             print()
-            obj_register.movies()
+            while True:
+                obj_register.movies()
+                print("Enter Movie ID")
+                print("Enter 0 to logout")
+                choice=input()
+                if choice=="0":
+                    break
+                else:
+                    obj_register.movieInfo(int(choice))
+                    print()
+                    print("Press 1 to Book Tickets")
+                    print("Press 2 to Cancel Tickets")
+                    print("Press 3 for user ratings")
+                    userChoice=input()
+                    if userChoice=="2":
+                        obj_register.cancelTickets(choice)
+                    elif userChoice=="3":
+                        obj_register.Userratings(choice)
+                    else:
+                        print("Enter valid input!")
         else:
             continue
     else:
