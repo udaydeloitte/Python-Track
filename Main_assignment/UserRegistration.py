@@ -48,12 +48,12 @@ class register:
             return False
 
     def movies(self):
-        id=0
+        id=1
         print("*** Movies List ***")
         wb = load_workbook("MovieData.xlsx")
         ws = wb.active
         rows = len(list(ws.rows))
-        range = ws["A1":"A" + str(rows)]
+        range = ws["A2":"A" + str(rows)]
         for movie in range:
             for x in movie:
                 id+=1
@@ -68,11 +68,11 @@ class register:
             print(movies.value,end="     ")
         wb.save("MovieData.xlsx")
         print()
-    def cancelTickets(self,choice):         #ws["D"+str(row_number)]=Cast
+    def cancelTickets(self,choice):
         wb = load_workbook("MovieData.xlsx")
         ws = wb.active
         cancel=int(input("Number of seats you want to cancel: "))
-        ws["E"+str(choice)]=ws["E"+str(choice)].value-cancel
+        ws["E"+str(choice)]=int(ws["E"+str(choice)].value)-cancel
         wb.save("MovieData.xlsx")
     def Userratings(self,choice):
         wb = load_workbook("MovieData.xlsx")
