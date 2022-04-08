@@ -60,6 +60,9 @@ while True:
                         obj_register.cancelTickets(int(choice))
                     elif userChoice=="3":
                         obj_register.Userratings(int(choice))
+                    elif userChoice=="1":
+                        obj_register.Booktickets(int(choice))
+                        print()
                     else:
                         print("Enter valid input!")
         else:

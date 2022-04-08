@@ -63,17 +63,19 @@ class register:
         ws=wb.active
         range = ws[str(choice)]
         print("*** Movie Information ***")
-        print("||Title||    ||Genre||    ||length||     ||Cast||      ||Capacity||     ||AdminRatings||")
+        print("||Title||    ||Genre||  ||length||   ||Cast||   ||Capacity||  ||AdminRatings||  ||UserRatings||")
         for movies in range:
             print(movies.value,end="     ")
         wb.save("MovieData.xlsx")
         print()
+
     def cancelTickets(self,choice):
         wb = load_workbook("MovieData.xlsx")
         ws = wb.active
         cancel=int(input("Number of seats you want to cancel: "))
-        ws["E"+str(choice)]=int(ws["E"+str(choice)].value)-cancel
+        ws["E"+str(choice)]=int(ws["E"+str(choice)].value)+cancel
         wb.save("MovieData.xlsx")
+
     def Userratings(self,choice):
         wb = load_workbook("MovieData.xlsx")
         ws = wb.active
@@ -81,5 +83,19 @@ class register:
         ws["G" + str(choice)] = user_rating
         wb.save("MovieData.xlsx")
 
+    def Booktickets(self,choice):
+        wb = load_workbook("MovieData.xlsx")
+        ws = wb.active
+        print("*** Welcome to Book Tickets ***")
+        print("Select Timings: ")
+        print("1 -  8:00-10:00")
+        print("2 -  10:30-12:30")
+        print("3 - 1:00-3:00 ")
+        booktime=input()
+        print("Remaining Seats: ", int(ws["E"+str(choice)].value))
+        bookseat=int(input("Enter Number of seats: "))
+        ws["E" + str(choice)] = int(ws["E" + str(choice)].value) - bookseat
+        print("Thanks for booking")
+        wb.save("MovieData.xlsx")
 
 
