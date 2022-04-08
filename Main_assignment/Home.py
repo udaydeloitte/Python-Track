@@ -37,7 +37,6 @@ while True:
     elif user_input == "2":
         if obj_register.userregister():
             print()
-
         else:
             continue
     elif user_input == "3":
@@ -58,9 +57,9 @@ while True:
                     print("Press 3 for user ratings")
                     userChoice=input()
                     if userChoice=="2":
-                        obj_register.cancelTickets(choice)
+                        obj_register.cancelTickets(int(choice))
                     elif userChoice=="3":
-                        obj_register.Userratings(choice)
+                        obj_register.Userratings(int(choice))
                     else:
                         print("Enter valid input!")
         else:

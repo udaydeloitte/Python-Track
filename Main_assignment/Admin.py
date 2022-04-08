@@ -36,8 +36,8 @@ class adminLogin:
         ws=wb.active
         rows=len(list(ws.rows))
         edit=input("Which movie you want to Edit: ")
-        range=ws["A1":"A"+str(rows)]
-        row_number=0
+        range=ws["A2":"A"+str(rows)]
+        row_number=1
         for movie in range:
             for x in movie:
                 row_number+=1
@@ -63,8 +63,8 @@ class adminLogin:
         ws = wb.active
         rows = len(list(ws.rows))
         delete = input("Which movie you want to delete: ")
-        range = ws["A1":"A" + str(rows)]
-        row_number = 0
+        range = ws["A2":"A" + str(rows)]
+        row_number = 1
         for movie in range:
             for x in movie:
                 row_number += 1
