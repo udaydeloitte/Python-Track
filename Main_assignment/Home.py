@@ -27,7 +27,10 @@ while True:
                 if admin_input == "4":
                     break
                 elif admin_input == "1":
-                    obj_Admin.addMovie()
+                    if obj_Admin.addMovie():
+                        print("Movie added successfully")
+                    else:
+                        continue
                 elif admin_input == "2":
                     obj_Admin.EditMovie()
                 else:

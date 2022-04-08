@@ -94,6 +94,7 @@ class register:
         booktime=input()
         print("Remaining Seats: ", int(ws["E"+str(choice)].value))
         bookseat=int(input("Enter Number of seats: "))
+
         ws["E" + str(choice)] = int(ws["E" + str(choice)].value) - bookseat
         print("Thanks for booking")
         wb.save("MovieData.xlsx")
